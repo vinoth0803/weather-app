@@ -44,7 +44,7 @@ const Weather = () => {
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`
             const response = await fetch(url)
             const data = await response.json()
-            if(data.cod !== 200) {
+            if(!response.ok) {
                 alert("City not found")
                 return;
             }
